@@ -111,52 +111,52 @@
 
         <div id="hv-leakage" class="solution">
             <h2>H.V. Leakage</h2>
-            <p>Go to <strong>F1 > F6</strong> (H.V. Monitor) and adjust the leakage sensitivity between 0-1000. Default value is 800. If set to 1000, "H.V. Fault" will be disabled.</p>
+            <p>F1 > F6 এ যান এবং লিকেজ সেন্সিটিভিটি ০-১০০০ এর মধ্যে সমন্বয় করুন। ডিফল্ট মান ৮০০। ১০০০ এ সেট করলে "H.V. Fault" নিষ্ক্রিয় হবে।</p>
         </div>
 
         <div id="viscosity" class="solution">
             <h2>Viscosity Calibration</h2>
-            <p>Go to <strong>F2 > F8</strong> (Ink Maintenance > Viscosity Calibration) and set the reference value (e.g., 3600).</p>
+            <p>F2 > F8 (Ink Maintenance > Viscosity Calibration) এ যান এবং রেফারেন্স মান (যেমন, ৩৬০০) সেট করুন।</p>
         </div>
 
         <div id="nozzle-blockage" class="solution">
             <h2>Nozzle Blockage</h2>
-            <p>Go to <strong>F3 > F7</strong> (Nozzle Maintenance > Nozzle Cleaning / Unblock). Run the "Nozzle Cleaning" and "Nozzle Unblock" functions. If the issue persists, clean the nozzle using an ultrasonic cleaner.</p>
+            <p>F3 > F7 (Nozzle Maintenance > Nozzle Cleaning / Unblock) এ যান। "Nozzle Cleaning" চালান এবং প্রয়োজনে আল্ট্রাসনিক ক্লিনার দিয়ে পরিষ্কার করুন।</p>
         </div>
 
         <div id="ink-prime" class="solution">
             <h2>Ink Prime</h2>
-            <p>Go to <strong>F4 > F5</strong> (Ink Maintenance > Ink Prime) and ensure there is no air bubble in the ink system.</p>
+            <p>F4 > F5 (Ink Maintenance > Ink Prime) এ যান এবং নিশ্চিত করুন যে ইঙ্ক সিস্টেমে বাতাসের বুদবুদ নেই।</p>
         </div>
 
         <div id="gutter-fault" class="solution">
             <h2>Gutter Fault</h2>
-            <p>Go to <strong>F5 > F9</strong> (System Maintenance > Special Setup > Gutter Maintenance) and clean the gutter if required.</p>
+            <p>F5 > F9 (System Maintenance > Special Setup > Gutter Maintenance) এ যান এবং প্রয়োজনে গাটার পরিষ্কার করুন।</p>
         </div>
 
         <div id="pump-speed" class="solution">
             <h2>Pump Speed</h2>
-            <p>Go to <strong>F6 > F9</strong> (Manual Control > Pump Speed) and set the pump speed (e.g., 50 RPM).</p>
+            <p>F6 > F9 (Manual Control > Pump Speed) এ যান এবং পাম্পের গতি (যেমন, ৫০ RPM) নির্ধারণ করুন।</p>
         </div>
 
         <div id="temperature" class="solution">
             <h2>Temperature Issue</h2>
-            <p>Monitor the temperature directly. Ensure the environment temperature is between 5°C and 45°C. Contact technical support if the issue persists.</p>
+            <p>তাপমাত্রা পর্যবেক্ষণ করুন এবং নিশ্চিত করুন যে পরিবেশের তাপমাত্রা ৫°সি থেকে ৪৫°সি এর মধ্যে রয়েছে।</p>
         </div>
 
         <div id="ink-pressure" class="solution">
             <h2>Ink Pressure</h2>
-            <p>Go to <strong>F7 > F8</strong> (Ink Maintenance > Ink Pressure) and set the ink pressure to 3000 mbar.</p>
+            <p>F7 > F8 (Ink Maintenance > Ink Pressure) এ যান এবং ইঙ্ক প্রেসার ৩০০০ mbar এ সেট করুন।</p>
         </div>
 
         <div id="barcode-error" class="solution">
             <h2>Barcode Error</h2>
-            <p>Go to <strong>F9 > F3</strong> (Insert Item > Barcode) and input the correct data. Verify the barcode before printing.</p>
+            <p>F9 > F3 (Insert Item > Barcode) এ যান এবং সঠিক ডেটা ইনপুট দিন। প্রিন্ট করার আগে বারকোড ভেরিফাই করুন।</p>
         </div>
 
         <div id="shutdown-issue" class="solution">
             <h2>Shutdown Issue</h2>
-            <p>Go to <strong>F1 > F5</strong> (System Main > Quick Shutdown / Auto Flush). For short-term shutdown, use "Quick Shutdown". For long-term shutdown, use "Auto Flush" multiple times or manually clean the system.</p>
+            <p>F1 > F5 (System Main > Quick Shutdown / Auto Flush) এ যান। স্বল্প সময়ের জন্য "Quick Shutdown" এবং দীর্ঘ সময়ের জন্য "Auto Flush" ব্যবহার করুন।</p>
         </div>
 
         <div class="chatbot">
@@ -169,15 +169,15 @@
 
     <script>
         const troubleshootingDictionary = {
-            'leakage': 'Go to F1 > F6 (H.V. Monitor) and adjust the leakage sensitivity between 0-1000. Default is 800.',
-            'viscosity': 'Go to F2 > F8 (Ink Maintenance > Viscosity Calibration) and set the reference value (e.g., 3600).',
-            'nozzle': 'Go to F3 > F7 (Nozzle Maintenance > Nozzle Cleaning / Unblock) and clean the nozzle if required.',
-            'pressure': 'Go to F7 > F8 (Ink Maintenance > Ink Pressure) and set the ink pressure to 3000 mbar.',
-            'shutdown': 'Go to F1 > F5 (System Main > Quick Shutdown / Auto Flush) and follow the shutdown procedures.',
-            'barcode': 'Go to F9 > F3 (Insert Item > Barcode) and input the correct barcode data.',
-            'gutter': 'Go to F5 > F9 (System Maintenance > Gutter Maintenance) and clean the gutter.',
-            'pump': 'Go to F6 > F9 (Manual Control > Pump Speed) and set the pump speed to 50 RPM.',
-            'temperature': 'Ensure the environment temperature is between 5°C and 45°C. Monitor the temperature directly.'
+            'leakage': 'F1 > F6 এ যান এবং লিকেজ সেন্সিটিভিটি ০-১০০০ এর মধ্যে সমন্বয় করুন। ডিফল্ট মান ৮০০।',
+            'viscosity': 'F2 > F8 (Ink Maintenance > Viscosity Calibration) এ যান এবং রেফারেন্স মান (যেমন, ৩৬০০) সেট করুন।',
+            'nozzle': 'F3 > F7 এ যান এবং "Nozzle Cleaning" চালান। প্রয়োজনে আল্ট্রাসনিক ক্লিনার ব্যবহার করুন।',
+            'pressure': 'F7 > F8 (Ink Maintenance > Ink Pressure) এ যান এবং ইঙ্ক প্রেসার ৩০০০ mbar এ সেট করুন।',
+            'shutdown': 'F1 > F5 (System Main > Quick Shutdown / Auto Flush) এ যান এবং শাটডাউন প্রক্রিয়া অনুসরণ করুন।',
+            'barcode': 'F9 > F3 (Insert Item > Barcode) এ যান এবং সঠিক বারকোড ডেটা ইনপুট দিন।',
+            'gutter': 'F5 > F9 (System Maintenance > Gutter Maintenance) এ যান এবং গাটার পরিষ্কার করুন।',
+            'pump': 'F6 > F9 (Manual Control > Pump Speed) এ যান এবং পাম্পের গতি নির্ধারণ করুন।',
+            'temperature': 'পরিবেশের তাপমাত্রা ৫°সি থেকে ৪৫°সি এর মধ্যে নিশ্চিত করুন।'
         };
 
         function showSolution(id) {
@@ -190,7 +190,7 @@
             const input = document.getElementById('chat-input').value.toLowerCase();
             const response = document.getElementById('chat-response');
 
-            let foundResponse = 'Please select a specific problem from the menu or ask about it.';
+            let foundResponse = 'আপনার প্রশ্নের জন্য নির্ধারিত সমাধান পাওয়া যায়নি। অনুগ্রহ করে সুনির্দিষ্ট প্রশ্ন করুন।';
             for (let key in troubleshootingDictionary) {
                 if (input.includes(key)) {
                     foundResponse = troubleshootingDictionary[key];

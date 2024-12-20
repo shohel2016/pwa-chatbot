@@ -3,21 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keyword Chatbot</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
+    <title>Machine Troubleshooting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .menu button {
+            flex: 1;
+            min-width: 150px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu button:hover {
+            background-color: #005fa3;
+        }
+
+        .solution {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+
+        .solution.active {
+            display: block;
+        }
+
+        .chatbot {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+
+        .chatbot input {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .chatbot button {
+            width: 60px;
+            padding: 10px;
+            border: none;
+            background-color: #0078d7;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Keyword Based Chatbot</h1>
-    <div id="chatbox"></div>
-    <input type="text" id="input-box" placeholder="আপনার প্রশ্ন লিখুন...">
-    <button onclick="sendMessage()">পাঠান</button>
+    <header>
+        <h1>Machine Troubleshooting Guide</h1>
+    </header>
 
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="menu">
+            <button onclick="showSolution('hv-leakage')">H.V. Leakage</button>
+            <button onclick="showSolution('viscosity')">Viscosity Calibration</button>
+            <button onclick="showSolution('nozzle-blockage')">Nozzle Blockage</button>
+            <button onclick="showSolution('ink-prime')">Ink Prime</button>
+            <button onclick="showSolution('gutter-fault')">Gutter Fault</button>
+            <button onclick="showSolution('pump-speed')">Pump Speed</button>
+            <button onclick="showSolution('temperature')">Temperature Issue</button>
+            <button onclick="showSolution('ink-pressure')">Ink Pressure</button>
+            <button onclick="showSolution('barcode-error')">Barcode Error</button>
+            <button onclick="showSolution('shutdown-issue')">Shutdown Issue</button>
+        </div>
+
+        <div id="hv-leakage" class="solution">
+            <h2>H.V. Leakage</h2>
+            <p>Go to <strong>F1 > F6</strong> (H.V. Monitor) and adjust the leakage sensitivity between 0-1000. Default value is 800. If set to 1000, "H.V. Fault" will be disabled.</p>
+        </div>
+
+        <div id="viscosity" class="solution">
+            <h2>Viscosity Calibration</h2>
+            <p>Go to <strong>F2 > F8</strong> (Ink Maintenance > Viscosity Calibration) and set the reference value (e.g., 3600).</p>
+        </div>
+
+        <div id="nozzle-blockage" class="solution">
+            <h2>Nozzle Blockage</h2>
+            <p>Go to <strong>F3 > F7</strong> (Nozzle Maintenance > Nozzle Cleaning / Unblock). Run the "Nozzle Cleaning" and "Nozzle Unblock" functions. If the issue persists, clean the nozzle using an ultrasonic cleaner.</p>
+        </div>
+
+        <div id="ink-prime" class="solution">
+            <h2>Ink Prime</h2>
+            <p>Go to <strong>F4 > F5</strong> (Ink Maintenance > Ink Prime) and ensure there is no air bubble in the ink system.</p>
+        </div>
+
+        <div id="gutter-fault" class="solution">
+            <h2>Gutter Fault</h2>
+            <p>Go to <strong>F5 > F9</strong> (System Maintenance > Special Setup > Gutter Maintenance) and clean the gutter if required.</p>
+        </div>
+
+        <div id="pump-speed" class="solution">
+            <h2>Pump Speed</h2>
+            <p>Go to <strong>F6 > F9</strong> (Manual Control > Pump Speed) and set the pump speed (e.g., 50 RPM).</p>
+        </div>
+
+        <div id="temperature" class="solution">
+            <h2>Temperature Issue</h2>
+            <p>Monitor the temperature directly. Ensure the environment temperature is between 5°C and 45°C. Contact technical support if the issue persists.</p>
+        </div>
+
+        <div id="ink-pressure" class="solution">
+            <h2>Ink Pressure</h2>
+            <p>Go to <strong>F7 > F8</strong> (Ink Maintenance > Ink Pressure) and set the ink pressure to 3000 mbar.</p>
+        </div>
+
+        <div id="barcode-error" class="solution">
+            <h2>Barcode Error</h2>
+            <p>Go to <strong>F9 > F3</strong> (Insert Item > Barcode) and input the correct data. Verify the barcode before printing.</p>
+        </div>
+
+        <div id="shutdown-issue" class="solution">
+            <h2>Shutdown Issue</h2>
+            <p>Go to <strong>F1 > F5</strong> (System Main > Quick Shutdown / Auto Flush). For short-term shutdown, use "Quick Shutdown". For long-term shutdown, use "Auto Flush" multiple times or manually clean the system.</p>
+        </div>
+
+        <div class="chatbot">
+            <h3>Ask Your Questions:</h3>
+            <input type="text" id="chat-input" placeholder="Type your question here...">
+            <button onclick="handleChat()">Send</button>
+            <div id="chat-response" style="margin-top: 15px;"></div>
+        </div>
+    </div>
+
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(() => console.log('Service Worker Registered'));
+        const troubleshootingDictionary = {
+            'leakage': 'Go to F1 > F6 (H.V. Monitor) and adjust the leakage sensitivity between 0-1000. Default is 800.',
+            'viscosity': 'Go to F2 > F8 (Ink Maintenance > Viscosity Calibration) and set the reference value (e.g., 3600).',
+            'nozzle': 'Go to F3 > F7 (Nozzle Maintenance > Nozzle Cleaning / Unblock) and clean the nozzle if required.',
+            'pressure': 'Go to F7 > F8 (Ink Maintenance > Ink Pressure) and set the ink pressure to 3000 mbar.',
+            'shutdown': 'Go to F1 > F5 (System Main > Quick Shutdown / Auto Flush) and follow the shutdown procedures.',
+            'barcode': 'Go to F9 > F3 (Insert Item > Barcode) and input the correct barcode data.',
+            'gutter': 'Go to F5 > F9 (System Maintenance > Gutter Maintenance) and clean the gutter.',
+            'pump': 'Go to F6 > F9 (Manual Control > Pump Speed) and set the pump speed to 50 RPM.',
+            'temperature': 'Ensure the environment temperature is between 5°C and 45°C. Monitor the temperature directly.'
+        };
+
+        function showSolution(id) {
+            const solutions = document.querySelectorAll('.solution');
+            solutions.forEach(solution => solution.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function handleChat() {
+            const input = document.getElementById('chat-input').value.toLowerCase();
+            const response = document.getElementById('chat-response');
+
+            let foundResponse = 'Please select a specific problem from the menu or ask about it.';
+            for (let key in troubleshootingDictionary) {
+                if (input.includes(key)) {
+                    foundResponse = troubleshootingDictionary[key];
+                    break;
+                }
+            }
+
+            response.innerText = foundResponse;
         }
     </script>
 </body>
